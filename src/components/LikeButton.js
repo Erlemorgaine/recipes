@@ -29,9 +29,9 @@ class LikeButton extends PureComponent {
     return (
       <p className={ this.classNames() }>
         <button onClick={ this.toggleLike.bind(this) }>
-          <img className="heart" src={ liked ? HeartRed : HeartGrey } />
+          <img className="heart" src={ liked ? HeartRed : HeartGrey } alt="heart"/>
           <span className="copy">
-            <img className="heart" src={ liked ? HeartRed : HeartGrey } />
+            <img className="heart" src={ liked ? HeartRed : HeartGrey } alt="heart"/>
           </span>
         </button>
         <span className="likes">{ liked ? 'You like this' : null}</span>

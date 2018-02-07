@@ -52,12 +52,39 @@ class App extends PureComponent {
       recipes: recipes
     }
   }
+
+  updateRecipe(id) {
+    this.setState({
+      recipes: this.state.recipes.map( (recipe) => {
+        if(recipe._id === id) {
+          return { ...recipe, liked: !recipe.liked }
+        }
+        return {...recipe}
+      })
+    })
+  }
+
+  // updateRecipe(id, updates) {
+  //   this.setState({
+  //     recipes: this.state.recipes.map( (recipe) => {
+  //       if(recipe._id === id) {
+  //         return { ...recipe, ...updates }
+  //       }
+  //       return {...recipe}
+  //     })
+  //   })
+  // }
+
   render() {
     const { recipes } = this.state
 
     return (
       <div className="app">
-        <RecipesContainer recipes={ recipes } />
+        <RecipesContainer
+          recipes={ recipes }
+          onChange={this.updateRecipe.bind(this)}
+          //updateRecipe={}
+        />
       </div>
     )
   }
