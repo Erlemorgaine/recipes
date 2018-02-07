@@ -8,7 +8,7 @@ import RecipeItem from '../recipes/RecipeItem'
 class LikeButton extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
-    liked: PropTypes.bool.isRequired
+    liked: PropTypes.bool
   }
 
   classNames() {

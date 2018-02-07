@@ -7,11 +7,11 @@ class RecipesContainer extends PureComponent {
   //   recipes:
   //   updateRecipe:
   // }
-  onChange(id) {
+  changeLike = (id) => {
     this.props.onChange(id)
   }
   renderRecipe(recipe, index) {
-   return <RecipeItem key={index} {...recipe} onChange={this.onChange}/>
+   return <RecipeItem key={index} {...recipe} onChange={this.changeLike}/>
   }
   render() {
     return(

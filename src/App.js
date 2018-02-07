@@ -57,7 +57,7 @@ class App extends PureComponent {
     this.setState({
       recipes: this.state.recipes.map( (recipe) => {
         if(recipe._id === id) {
-          return { ...recipe, liked: !recipe.liked }
+          return { ...recipe, liked : !recipe.liked }
         }
         return {...recipe}
       })

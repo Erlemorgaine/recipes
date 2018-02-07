@@ -41,7 +41,7 @@ class RecipeItem extends PureComponent {
           <div>
             <LikeButton
               liked={ liked }
-              onChange={this.toggleLike.bind(this)}
+              onChange={this.onChange}
             />
           </div>
         </div>
