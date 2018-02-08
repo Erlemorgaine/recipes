@@ -14,6 +14,7 @@ class RecipeItem extends PureComponent {
     vegetarian: PropTypes.bool,
     pescatarian: PropTypes.bool,
     liked: PropTypes.bool,
+    photo: PropTypes.string,
     //updateRecipe:
   }
 
@@ -27,11 +28,12 @@ class RecipeItem extends PureComponent {
   // }
 
   render() {
-    const { title, summary, vegan, vegetarian, pescatarian, liked } = this.props
+    const { title, summary, vegan, vegetarian, pescatarian, liked, photo } = this.props
     return(
       <article className="recipe">
         <h1>{ title }</h1>
         <div>
+          <img className="recipe-image" src={ photo } alt="recipe"/>
           <p>{ summary }</p>
           <ul>
             { vegan && <li><img src={Vegan} alt="vegan" /></li> }

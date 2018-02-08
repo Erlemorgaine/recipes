@@ -1,7 +1,3 @@
-import { CREATE_RECIPE } from '../actions/recipes/create'
-import { UPDATE_LIKE } from '../actions/recipes/update'
-//import recipes from '../fixtures/recipes'
-
 const recipes = [
   {
     _id: 'abcd123',
@@ -44,24 +40,3 @@ const recipes = [
     liked: false,
   },
 ]
-
-export default (state = recipes, action = {}) => {
-  switch(action.type) {
-    case CREATE_RECIPE :
-      return [Object.assign({}, action.payload)].concat(state)
-
-    case UPDATE_LIKE :
-      return state.map( (item, index) => {
-        if(index !== action.index) {
-          return item;
-        }
-        return {
-          ...item,
-          ...action.item
-        }
-      })
-
-    default :
-      return state
-  }
-}
