@@ -4,6 +4,7 @@ import Pescatarian from '../images/pescatarian.svg'
 import Vegetarian from '../images/vegetarian.svg'
 import Vegan from '../images/vegan.svg'
 import LikeButton from '../components/LikeButton'
+import { Link } from 'react-router-dom'
 
 class RecipeItem extends PureComponent {
   static propTypes = {
@@ -28,7 +29,7 @@ class RecipeItem extends PureComponent {
   // }
 
   render() {
-    const { title, summary, vegan, vegetarian, pescatarian, liked, photo } = this.props
+    const { _id, title, summary, vegan, vegetarian, pescatarian, liked, photo } = this.props
     return(
       <article className="recipe">
         <h1>{ title }</h1>
@@ -46,6 +47,7 @@ class RecipeItem extends PureComponent {
               onChange={this.onChange}
             />
           </div>
+          <Link to={'recipes/' + _id}>View recipe</Link>
         </div>
       </article>
     )

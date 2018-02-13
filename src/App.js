@@ -1,5 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
+import Routes from './routes'
+import {withRouter} from 'react-router'
 import RecipesContainer from './recipes/RecipesContainer'
+import fetchRecipes from './actions/recipes/fetch'
 
 class App extends PureComponent {
 
@@ -28,13 +31,10 @@ class App extends PureComponent {
   render() {
     return (
       <div className="app">
-        <RecipesContainer
-          onChange={this.updateRecipe.bind(this)}
-          //updateRecipe={}
-        />
+        <Routes />
       </div>
     )
   }
 }
 
-export default App
+export default withRouter(App)

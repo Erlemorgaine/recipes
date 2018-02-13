@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Title from '../components/Title'
 import RecipeItem from './RecipeItem'
 import RecipeEditor from './RecipeEditor'
+import fetchRecipes from '../actions/recipes/fetch'
 import { connect } from 'react-redux'
 
 class RecipesContainer extends PureComponent {
@@ -9,6 +10,11 @@ class RecipesContainer extends PureComponent {
   //   recipes:
   //   updateRecipe:
   // }
+
+  componentWillMount() {
+    this.props.fetchRecipes()
+  }
+
   changeLike = (id) => {
     this.props.onChange(id)
   }
@@ -34,4 +40,4 @@ const mapStateToProps = ({ recipes }) => ({
   recipes
 })
 
-export default connect(mapStateToProps)(RecipesContainer)
+export default connect(mapStateToProps, { fetchRecipes })(RecipesContainer)
