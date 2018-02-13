@@ -80,6 +80,7 @@ export default class ApiClient {
     localStorage.setItem(this.options.tokenStorageKey, token)
   }
 
+
   // createUrl(path) {
   //   return `${process.env.HOST || `http://localhost:${process.env.PORT || 3030}`}${path}`
   //     .replace(/\/\//g, '/')

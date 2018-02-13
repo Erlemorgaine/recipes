@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Title from '../components/Title'
 import RecipeItem from './RecipeItem'
 import RecipeEditor from './RecipeEditor'
+import Navigation from '../components/Navigation'
 import fetchRecipes from '../actions/recipes/fetch'
 import { connect } from 'react-redux'
 
@@ -25,6 +26,7 @@ class RecipesContainer extends PureComponent {
     return(
       <div className="recipes wrapper">
         <header>
+          <Navigation />
           <Title content="All Recipes" />
         </header>
         <main>
